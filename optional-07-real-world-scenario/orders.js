@@ -8,33 +8,33 @@ let orders = [];
 
 // TODO: selesaikan fungsi addOrder
 function addOrder(customerName, items) {
-    orders.push({
-      id: generateUniqueId(),
-      customerName,
-      items,
-      totalPrice: items.reduce((a, b) => a + b.price, 0),
-      status: 'Menunggu'
-    })
+  orders.push({
+    id: generateUniqueId(),
+    customerName,
+    items,
+    totalPrice: items.reduce((a, b) => a + b.price, 0),
+    status: 'Menunggu'
+  })
 }
 
 // TODO: selesaikan fungsi updateOrderStatus
 function updateOrderStatus(orderId, status) {
-    const order = orders.find(order => order.id === orderId);
-    if (order) {
-      order.status = status
-    }
+  const order = orders.find(order => order.id === orderId);
+  if (order) {
+    order.status = status
+  }
 }
 
 // TODO: selesaikan fungsi calculateTotalRevenue dari order yang berstatus Selesai
 function calculateTotalRevenue() {
-    return orders
+  return orders
     .filter(order => order.status === 'Selesai')
     .reduce((total, order) => total + order.totalPrice, 0);
 }
 
 // TODO: selesaikan fungsi deleteOrder
 function deleteOrder(id) {
-    orders = orders.filter(order => order.id !== id);
+  orders = orders.filter(order => order.id !== id);
 }
 
 export {
