@@ -1,3 +1,6 @@
 {
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "main": "node main.js"
+  }
 }
